@@ -2,12 +2,12 @@
 API used for listing all the region, province, city, municipality, and barangay. All data came from <a href='https://psa.gov.ph' target='_blank'>Philippine Statistics Authority</a>. This API includes the total population for each regions etc. and other information.
 
 # ENDPOINTS
-```https://psgc-api.herokuapp.com```
-REGION - ```/v1/region```
-PROVINCE - ```/v1/province```
-CITY - ```/v1/city```
-MUNICIPALITY - ```/v1/municipality```
-BARANGAY - ```/v1/barangay```
+```https://psgc-api.herokuapp.com```<br/>
+REGION - ```/v1/region```<br/>
+PROVINCE - ```/v1/province```<br/>
+CITY - ```/v1/city```<br/>
+MUNICIPALITY - ```/v1/municipality```<br/>
+BARANGAY - ```/v1/barangay```<br/>
 # SETUP
 ```$ npm install```
 
@@ -19,7 +19,7 @@ BARANGAY - ```/v1/barangay```
 - [ ] automate uploading of json file once there's a new PSGC Excel File
 - [ ] fix all the endpoints
 - [ ] move to a proper server
-- [ ] add rate limits
+- [ ] add rate limit
 
 Made with 💜 by Justin Balaguer
 <a href='twitter.com/ojintoji/'>Twitter</a>

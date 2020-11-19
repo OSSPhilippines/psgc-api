@@ -5,15 +5,15 @@ const cors = require('cors');
 const middlewares = require('./middlewares');
 
 /* region */
-const region = require('./api/region');
+const region = require('./v1/region');
 /* province */
-const province = require('./api/province');
+const province = require('./v1/province');
 /* city */
-const city = require('./api/city');
+const city = require('./v1/city');
 /* municipality */
-const municipality = require('./api/municipality');
+const municipality = require('./v1/municipality');
 /* barangay */
-const barangay = require('./api/barangay');
+const barangay = require('./v1/barangay');
 
 require('dotenv').config();
 
@@ -43,15 +43,15 @@ app.get('/', (req, res) => {
 });
 
 /* region */
-app.use('/api/region', region);
+app.use('/v1/region', region);
 /* province */
-app.use('/api/province', province);
+app.use('/v1/province', province);
 /* city */
-app.use('/api/city', city);
+app.use('/v1/city', city);
 /* municipality */
-app.use('/api/municipality', municipality);
+app.use('/v1/municipality', municipality);
 /* barangay */
-app.use('/api/barangay', barangay);
+app.use('/v1/barangay', barangay);
 
 /* errorHandler middlerware */
 app.use(middlewares.notFound);

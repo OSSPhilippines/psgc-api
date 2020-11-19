@@ -1,6 +1,13 @@
 # PSGC (Philippine Standard Geographic Code)
-API used for listing all the region, province, city, municipality, and barangay. All data came from <a href='psa.gov.ph'>Philippine Statistics Authority</a>. This API includes the total population for each regions etc. and other information.
+API used for listing all the region, province, city, municipality, and barangay. All data came from <a href='https://psa.gov.ph' target='_blank'>Philippine Statistics Authority</a>. This API includes the total population for each regions etc. and other information.
 
+# ENDPOINTS
+```https://psgc-api.herokuapp.com```
+REGION - ```/v1/region```
+PROVINCE - ```/v1/province```
+CITY - ```/v1/city```
+MUNICIPALITY - ```/v1/municipality```
+BARANGAY - ```/v1/barangay```
 # SETUP
 ```$ npm install```
 

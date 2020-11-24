@@ -1,6 +1,6 @@
 {
   "name": "psgc_backend",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -8,12 +8,13 @@
     "dev": "nodemon src/index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Justin Balaguer",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "express-rate-limit": "^5.2.3",
     "helmet": "^4.2.0",
     "mongoose": "^5.10.15",
     "morgan": "^1.10.0"

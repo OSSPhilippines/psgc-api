@@ -4,16 +4,15 @@ const helmet = require('helmet'); /* protection */
 const cors = require('cors');
 const middlewares = require('./middlewares');
 
-/* region */
+/* api v1 */
 const region = require('./v1/region');
-/* province */
 const province = require('./v1/province');
-/* city */
 const city = require('./v1/city');
-/* municipality */
 const municipality = require('./v1/municipality');
-/* barangay */
 const barangay = require('./v1/barangay');
+
+/* api v1.1 */
+const api = require('./api')
 
 require('dotenv').config();
 
@@ -35,6 +34,10 @@ app.use(helmet());
 app.use(cors());
 app.use(express.json());
 
+// Enable if you're behind a reverse proxy (Heroku, Bluemix, AWS ELB, Nginx, etc)
+// see https://expressjs.com/en/guide/behind-proxies.html
+app.set('trust proxy', 1);
+
 /* routes */
 app.get('/', (req, res) => {
   res.json({
@@ -52,6 +55,9 @@ app.use('/v1/city', city);
 app.use('/v1/municipality', municipality);
 /* barangay */
 app.use('/v1/barangay', barangay);
+
+/* api */
+app.use('/api/', api);
 
 /* errorHandler middlerware */
 app.use(middlewares.notFound);

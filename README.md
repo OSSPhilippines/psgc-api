@@ -55,7 +55,7 @@ Specific Barangay | ```/api/barangay/:code```
 - [ ] create the frontend with docs
 - [ ] move to a proper server or upgrade dyno (hosted on heroku for now)
 
-Made with 💜 by [Justin Balaguer](https://justinbalaguer.github.io/)
-[![Twitter](https://img.shields.io/badge/@ojintoji-Twitter-00acee.svg)](https://twitter.com/ojintoji/)
+Made with 💜 by [Justin Balaguer](https://justinbalaguer.github.io/)\
+[![Twitter](https://img.shields.io/badge/@ojintoji-Twitter-00acee.svg)](https://twitter.com/ojintoji/)\
 [![Twitter](https://img.shields.io/badge/@ojintojix-Facebook-3b5998.svg)](https://facebook.com/ojintojix/)
 ###### dm me on any social media above to get the json files

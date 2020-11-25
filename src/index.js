@@ -4,14 +4,7 @@ const helmet = require('helmet'); /* protection */
 const cors = require('cors');
 const middlewares = require('./middlewares');
 
-/* api v1 */
-const region = require('./v1/region');
-const province = require('./v1/province');
-const city = require('./v1/city');
-const municipality = require('./v1/municipality');
-const barangay = require('./v1/barangay');
-
-/* api v1.1 */
+/* api */
 const api = require('./api')
 
 require('dotenv').config();
@@ -39,22 +32,7 @@ app.use(express.json());
 app.set('trust proxy', 1);
 
 /* routes */
-app.get('/', (req, res) => {
-  res.json({
-      message: "Made with 💜 by Justin Balaguer. Twitter - @ojintoji",
-  });
-});
-
-/* region */
-app.use('/v1/region', region);
-/* province */
-app.use('/v1/province', province);
-/* city */
-app.use('/v1/city', city);
-/* municipality */
-app.use('/v1/municipality', municipality);
-/* barangay */
-app.use('/v1/barangay', barangay);
+app.use(express.static('public'));
 
 /* api */
 app.use('/api/', api);

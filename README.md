@@ -8,6 +8,8 @@ This API includes the total population for each regions etc. and other informati
 ![Made With](https://img.shields.io/badge/Made%20with-Node.JS-68A063?style=for-the-badge&logo=Node.JS)
 
 ## ENDPOINTS (v1.1)
+### URL
+[`https://psgc-api.herokuapp.com`](https://psgc-api.herokuapp.com/)
 ### REGION
 Data | Endpoint
 ------------ | -------------

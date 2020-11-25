@@ -7,6 +7,9 @@ This API includes the total population for each regions etc. and other informati
 ![Updated Data](https://img.shields.io/badge/Data-as%20of%20June%202020-green.svg)\
 ![Made With](https://img.shields.io/badge/Made%20with-Node.JS-68A063?style=for-the-badge&logo=Node.JS)
 
+## DOCS
+[Read Docs (Under construction)](https://psgc.vercel.app)
+
 ## ENDPOINTS (v1.1)
 ### URL
 [`https://psgc-api.herokuapp.com`](https://psgc-api.herokuapp.com/)

@@ -8,7 +8,8 @@ This API includes the total population for each regions etc. and other informati
 ![Made With](https://img.shields.io/badge/Made%20with-Node.JS-68A063?style=for-the-badge&logo=Node.JS)
 
 ## DOCS
-[Read Docs (Under construction)](https://psgc.vercel.app)
+[Read Docs (Under construction)](https://psgc.vercel.app)\
+[Postman](https://www.getpostman.com/collections/0dd096df874f87cc4a7d)
 
 ## ENDPOINTS (v1.1)
 
@@ -20,36 +21,36 @@ GET | [`https://psgc-api.herokuapp.com`](https://psgc-api.herokuapp.com/)
 Data | Endpoint
 ------------ | -------------
 All Region | ```/api/region```
-Specific Region | ```/api/region/:code```
-List of Province in specific Region | ```/api/region/:code/province```
+Specific Region | ```/api/region/{{code}}```
+List of Province in specific Region | ```/api/region/{{code}}/province```
 
 ### PROVINCE
 Data | Endpoint
 ------------ | -------------
 All Province | ```/api/province```
-Specific Province | ```/api/province/:code```
-List of City in specific Province | ```/api/province/:code/city```
-List of Municipality in specific Region | ```/api/province/:code/municipality```
+Specific Province | ```/api/province/{{code}}```
+List of City in specific Province | ```/api/province/{{code}}/city```
+List of Municipality in specific Region | ```/api/province/{{code}}/municipality```
 
 ### CITY
 Data | Endpoint
 ------------ | -------------
 All City | ```/api/city```
-Specific City | ```/api/city/:code```
-List of Barangay in specific City | ```/api/city/:code/barangay```
+Specific City | ```/api/city/{{code}}```
+List of Barangay in specific City | ```/api/city/{{code}}/barangay```
 
 ### MUNICIPALITY
 Data | Endpoint
 ------------ | -------------
 All Municipality | ```/api/municipality```
-Specific Municipality | ```/api/municipality/:code```
-List of Barangay in specific Municipality | ```/api/municipality/:code/barangay```
+Specific Municipality | ```/api/municipality/{{code}}```
+List of Barangay in specific Municipality | ```/api/municipality/{{code}}/barangay```
 
 ### BARANGAY
 Data | Endpoint
 ------------ | -------------
 All Barangay | ```/api/barangay```
-Specific Barangay | ```/api/barangay/:code```
+Specific Barangay | ```/api/barangay/{{code}}```
 
 ## PLANS
 - [x] fix all the endpoints

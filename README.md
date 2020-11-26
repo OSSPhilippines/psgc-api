@@ -51,12 +51,6 @@ Data | Endpoint
 All Barangay | ```/api/barangay```
 Specific Barangay | ```/api/barangay/:code```
 
-## DEVELOPMENT SETUP
-```$ npm install```
-
-## START DEV SERVER
-```$ npm run dev```
-
 ## PLANS
 - [x] fix all the endpoints
 - [x] add rate limit (currently at 50 calls per day)

@@ -9,7 +9,7 @@ This API includes the total population for each regions etc. and other informati
 
 ## DOCS
 [Read Docs (Under construction)](https://psgc.vercel.app)\
-[Postman](https://www.getpostman.com/collections/0dd096df874f87cc4a7d)
+[Postman](https://documenter.getpostman.com/view/12270232/TVmFmLrt)
 
 ## ENDPOINTS (v1.1)
 

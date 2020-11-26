@@ -11,8 +11,11 @@ This API includes the total population for each regions etc. and other informati
 [Read Docs (Under construction)](https://psgc.vercel.app)
 
 ## ENDPOINTS (v1.1)
-### URL
-[`https://psgc-api.herokuapp.com`](https://psgc-api.herokuapp.com/)
+
+METHOD | Base URL
+------------ | -------------
+GET | [`https://psgc-api.herokuapp.com`](https://psgc-api.herokuapp.com/)
+
 ### REGION
 Data | Endpoint
 ------------ | -------------

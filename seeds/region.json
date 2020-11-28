@@ -1,0 +1,23 @@
+{
+  "total": 2,
+  "region": [
+    {
+      "code": "10000000",
+      "name": "REGION I (ILOCOS REGION)",
+      "geographic_level": "Reg",
+      "city_class": "",
+      "income_classification": "",
+      "urban_rural": "",
+      "population": "5026128.0"
+    },
+    {
+      "code": "20000000",
+      "name": "REGION II (CAGAYAN VALLEY)",
+      "geographic_level": "Reg",
+      "city_class": "",
+      "income_classification": "",
+      "urban_rural": "",
+      "population": "3451410.0"
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "total": 13,
+  "city": [
+    {
+      "code": "12805000",
+      "name": "CITY OF BATAC",
+      "geographic_level": "City",
+      "city_class": "CC",
+      "income_classification": "5th",
+      "urban_rural": "",
+      "population": "55201.0"
+    },
+    {
+      "code": "12812000",
+      "name": "CITY OF LAOAG (Capital)",
+      "geographic_level": "City",
+      "city_class": "CC",
+      "income_classification": "3rd",
+      "urban_rural": "",
+      "population": "111125.0"
+    },
+    {
+      "code": "12906000",
+      "name": "CITY OF CANDON",
+      "geographic_level": "City",
+      "city_class": "CC",
+      "income_classification": "4th",
+      "urban_rural": "",
+      "population": "60623.0"
+    },
+    {
+      "code": "12934000",
+      "name": "CITY OF VIGAN (Capital)",
+      "geographic_level": "City",
+      "city_class": "CC",
+      "income_classification": "4th",
+      "urban_rural": "",
+      "population": "53879.0"
+    },
+    {
+      "code": "13314000",
+      "name": "CITY OF SAN FERNANDO (Capital)",
+      "geographic_level": "City",
+      "city_class": "CC",
+      "income_classification": "3rd",
+      "urban_rural": "",
+      "population": "121812.0"
+    },
+    {
+      "code": "15503000",
+      "name": "CITY OF ALAMINOS",
+      "geographic_level": "City",
+      "city_class": "CC",
+      "income_classification": "4th",
+      "urban_rural": "",
+      "population": "89708.0"
+    },
+    {
+      "code": "15518000",
+      "name": "CITY OF DAGUPAN",
+      "geographic_level": "City",
+      "city_class": "ICC",
+      "income_classification": "2nd",
+      "urban_rural": "",
+      "population": "171271.0"
+    },
+    {
+      "code": "15532000",
+      "name": "CITY OF SAN CARLOS",
+      "geographic_level": "City",
+      "city_class": "CC",
+      "income_classification": "3rd",
+      "urban_rural": "",
+      "population": "188571.0"
+    },
+    {
+      "code": "15546000",
+      "name": "CITY OF URDANETA",
+      "geographic_level": "City",
+      "city_class": "CC",
+      "income_classification": "2nd",
+      "urban_rural": "",
+      "population": "132940.0"
+    },
+    {
+      "code": "21529000",
+      "name": "TUGUEGARAO CITY (Capital)",
+      "geographic_level": "City",
+      "city_class": "CC",
+      "income_classification": "3rd",
+      "urban_rural": "",
+      "population": "153502.0"
+    },
+    {
+      "code": "23108000",
+      "name": "CITY OF CAUAYAN",
+      "geographic_level": "City",
+      "city_class": "CC",
+      "income_classification": "3rd",
+      "urban_rural": "",
+      "population": "129523.0"
+    },
+    {
+      "code": "23114000",
+      "name": "CITY OF ILAGAN (Capital)",
+      "geographic_level": "City",
+      "city_class": "CC",
+      "income_classification": "1st (as Mun)",
+      "urban_rural": "",
+      "population": "145568.0"
+    },
+    {
+      "code": "23135000",
+      "name": "CITY OF SANTIAGO",
+      "geographic_level": "City",
+      "city_class": "ICC",
+      "income_classification": "1st",
+      "urban_rural": "",
+      "population": "134830.0"
+    }
+  ]
+}

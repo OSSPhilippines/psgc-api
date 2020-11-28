@@ -2,10 +2,12 @@ const express = require('express');
 const morgan = require('morgan'); /* logger */
 const helmet = require('helmet'); /* protection */
 const cors = require('cors');
+const limiter = require('./utils/rateLimit');
 const middlewares = require('./middlewares');
 
 /* api */
-const api = require('./api')
+const api = require('./api/_index');
+const apiKeyController = require('./api/keys');
 
 require('dotenv').config();
 
@@ -13,8 +15,8 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 try {
   mongoose.connect(process.env.MONGODB_URL, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
   });
 } catch (error) {
   next(error)
@@ -34,8 +36,14 @@ app.set('trust proxy', 1);
 /* routes */
 app.use(express.static('public'));
 
-/* api */
-app.use('/api/', api);
+/* limiter for all routes */
+app.use(limiter)
+
+/* generate api key */
+app.use('/key', apiKeyController.getApiKey)
+
+/* api with apikey check */
+app.use('/api', middlewares.checkApiKey, api);
 
 /* errorHandler middlerware */
 app.use(middlewares.notFound);

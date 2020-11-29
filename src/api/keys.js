@@ -1,4 +1,4 @@
-const shortid = require('shortid');
+const {nanoid} = require('nanoid');
 const ApiKey = require('../models/apiKeys');
 const handleAsync = require('../utils/handleAsync');
 const encryptKey = require('../utils/encryptKey');
@@ -8,7 +8,7 @@ const encryptKey = require('../utils/encryptKey');
  */
 const getApiKey = handleAsync(async (req, res, next) => {
 
-    const randomKey = shortid.generate();
+    const randomKey = nanoid();
 
     const randomKeyEncrypted = encryptKey(randomKey)
 

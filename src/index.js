@@ -7,6 +7,7 @@ const middlewares = require('./middlewares');
 
 /* api */
 const api = require('./api/_index');
+const apiKeyController = require('./api/keys');
 
 require('dotenv').config();
 
@@ -35,13 +36,16 @@ app.set('trust proxy', 1);
 /* routes */
 app.use(express.static('public'));
 
-// /* limiter for all routes */
+/* limiter for all routes */
 app.use(limiter)
 
-/* api */
-app.use('/api', api);
+/* generate api key */
+app.use('/key', apiKeyController.getApiKey)
 
-// /* errorHandler middlerware */
+/* api with apikey check */
+app.use('/api', middlewares.checkApiKey, api);
+
+/* errorHandler middlerware */
 app.use(middlewares.notFound);
 app.use(middlewares.errorHandler);
 

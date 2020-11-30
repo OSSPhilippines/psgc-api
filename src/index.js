@@ -2,11 +2,13 @@ const express = require('express');
 const morgan = require('morgan'); /* logger */
 const helmet = require('helmet'); /* protection */
 const cors = require('cors');
-const limiter = require('./utils/rateLimit');
+const limiter = require('./utils/rateLimit'); /* rate limit */
 const middlewares = require('./middlewares');
+const allowedIps = require('./utils/allowedIps');
 
 /* api */
 const api = require('./api/_index');
+const backers = require('./backers/_index');
 const apiKeyController = require('./api/keys');
 
 require('dotenv').config();
@@ -36,14 +38,12 @@ app.set('trust proxy', 1);
 /* routes */
 app.use(express.static('public'));
 
-/* limiter for all routes */
-app.use(limiter)
-
 /* generate api key */
-app.use('/key', apiKeyController.getApiKey)
+app.use('/key', allowedIps, apiKeyController.getApiKey)
 
-/* api with apikey check */
-app.use('/api', middlewares.checkApiKey, api);
+/* api with apikey ckck */
+app.use('/api', limiter, api);
+app.use('/backers', middlewares.checkApiKey, backers);
 
 /* errorHandler middlerware */
 app.use(middlewares.notFound);

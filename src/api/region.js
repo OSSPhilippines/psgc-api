@@ -8,7 +8,27 @@ const handleAsync = require('../utils/handleAsync');
  */
 const getAllRegions = handleAsync(async (req, res, next) => {
     const data = await RegionRequest.find();
-    res.json(data);
+    const len = data[0].total;
+    const json_data = [];
+    const arr = [];
+    for(let i = 0; i < len; i++) {
+        const code = data[0].region[i].code;
+        const name = data[0].region[i].name;
+        const geographic_level = data[0].region[i].geographic_level;
+        const population = data[0].region[i].population;
+        arr.push({
+            code: code,
+            name: name,
+            geographic_level: geographic_level,
+            population: population
+        });
+    }
+    json_data.push({
+        _id: data[0]._id,
+        total: len,
+        region: arr
+    });
+    res.json(json_data);
 })
 
 
@@ -21,12 +41,22 @@ const getARegion = handleAsync(async (req, res, next) => {
     if (!data) throw new Error('No Results Found');
 
     const totalNumOfRegions = parseInt(data.total);
-
+    let json_data = {};
     for (i = 0; i < totalNumOfRegions; i++) {
         let db_code = data.region[i]['code'];
         let db_obj = data.region[i];
         if (code == db_code) {
-            res.json(db_obj)
+            const code = db_obj.code;
+            const name = db_obj.name;
+            const geographic_level = db_obj.geographic_level;
+            const population = db_obj.population;
+            json_data = {
+                code: code,
+                name: name,
+                geographic_level: geographic_level,
+                population: population
+            };
+            res.json(json_data)
             break;
         }
     }
@@ -56,10 +86,21 @@ const getAllProvincesOfARegion = handleAsync(async (req, res, next) => {
         db_code.split('').length < 9
             ? new_split_code = parseInt(db_code[0])
             : new_split_code = parseInt(db_code[0] + db_code[1])
-
-        split_code === new_split_code
-            ? results.push(data['province'][i])
-            : null
+            
+        if(split_code === new_split_code) {
+            const code = data['province'][i].code;
+            const name = data['province'][i].name;
+            const geographic_level = data['province'][i].geographic_level;
+            const population = data['province'][i].population;
+            results.push({
+                code: code,
+                name: name,
+                geographic_level: geographic_level,
+                population: population
+            })
+        } else {
+            null;
+        }
     }
 
     res.json(results)

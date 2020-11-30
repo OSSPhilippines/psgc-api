@@ -13,7 +13,8 @@
       }
   ],
   "env": {
-  "MONGODB_URL": "@mongodb_url",
-  "NODE_ENV": "production"
-}
+    "MONGODB_URL": "@mongodb_url",
+    "NODE_ENV": "production",
+    "API_SECRET": ""
+  }
 }

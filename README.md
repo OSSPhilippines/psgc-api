@@ -4,16 +4,20 @@
 API used for listing all the region, province, city, municipality, and barangay. All data came from
 [Philippine Statistics Authority](https://psa.gov.ph)
 This API includes the total population for each regions etc. and other information.\
-![Updated Data](https://img.shields.io/badge/Data-as%20of%20June%202020-green.svg)\
+![Updated Data](https://img.shields.io/badge/Data-as%20of%20September%202020-green.svg)\
 ![Github Stars](https://img.shields.io/github/stars/justinbalaguer/PSGC-API.svg?style=for-the-badge)
 ![Github Forks](https://img.shields.io/github/forks/justinbalaguer/PSGC-API.svg?style=for-the-badge)
 ![Github License](https://img.shields.io/github/license/justinbalaguer/PSGC-API.svg?style=for-the-badge)
 ![Made With](https://img.shields.io/badge/Made%20with-Node.JS-68A063?style=for-the-badge&logo=Node.JS)
 
+## NOTE
+- Dist (District) is included in province route/data
+- SubMun (Sub Municipality) is included in municipality route/data
+
 ## DOCS
 [Postman](https://documenter.getpostman.com/view/12270232/TVmFmLrt)
 
-## ENDPOINTS (v1.2)
+## ENDPOINTS (v1.3)
 
 METHOD | Base URL
 ------------ | -------------

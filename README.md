@@ -58,6 +58,16 @@ Data | Endpoint
 All Barangay | ```api/barangay```
 Specific Barangay | ```api/barangay/{{code}}```
 
+## CONTRIBUTORS
+<table>
+  <tr>
+    <td align="center"><a href="https://justinbalaguer.github.io/"><img src="https://avatars0.githubusercontent.com/u/26339491?s=460&u=c1f802af9e6c33df21f4314d2065dc2be7d12e51&v=4" width="100px;" alt=""/><br /><sub><b>Justin Balaguer</b></sub></a><br />
+    </td>
+    <td align="center"><a href="https://github.com/rookiemonkey"><img src="https://avatars0.githubusercontent.com/u/61614867?s=400&u=f5d9e89800c656aef288a6bc7900af96abf77fc7&v=4" width="100px;" alt=""/><br /><sub><b>Kevin Roi Basina</b></sub></a><br />
+    </td>
+  </tr>
+</table>
+
 ## SOCIALS
 [![Twitter](https://img.shields.io/badge/@ojintoji-Twitter-00acee.svg)](https://twitter.com/ojintoji/)\
 [![Twitter](https://img.shields.io/badge/@ojintojix-Facebook-3b5998.svg)](https://facebook.com/ojintojix/)

@@ -1,0 +1,71 @@
+body {
+  background-color: #ddd;
+  font-family: "Montserrat", sans-serif !important;
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+body main {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+body main .logo {
+  font-size: 8em;
+  pointer-events: none;
+}
+
+body main .logo #psgc {
+  color: #29619a;
+}
+
+body main .logo #rest {
+  color: #a42222;
+}
+
+body main .content {
+  text-align: center;
+}
+
+body main .content .github {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body main .content .github h5 {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+body main .content a {
+  color: #29619a;
+  text-decoration: none;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+body main .content a:hover {
+  color: #a42222;
+}
+
+@media screen and (max-width: 900px) {
+  .logo {
+    font-size: 4rem !important;
+  }
+}
+/*# sourceMappingURL=style.css.map */

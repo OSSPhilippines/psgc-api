@@ -26,14 +26,13 @@ body {
     }
     .content {
       text-align: center;
-      .github {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        h5 {
-          font-weight: 500;
-          font-size: 1rem;
-        }
+      font-size: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      line-height: 0px;
+      h4 {
+        font-weight: 500 !important;
       }
       a {
         color: $blue;
@@ -51,6 +50,6 @@ body {
 
 @media screen and (max-width: 900px) {
   .logo {
-    font-size: 4rem !important;
+    font-size: 5rem !important;
   }
 }

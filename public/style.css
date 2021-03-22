@@ -33,23 +33,21 @@ body main .logo #rest {
 
 body main .content {
   text-align: center;
-}
-
-body main .content .github {
+  font-size: 1.2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  line-height: 0px;
 }
 
-body main .content .github h5 {
-  font-weight: 500;
-  font-size: 1rem;
+body main .content h4 {
+  font-weight: 500 !important;
 }
 
 body main .content a {
@@ -65,7 +63,7 @@ body main .content a:hover {
 
 @media screen and (max-width: 900px) {
   .logo {
-    font-size: 4rem !important;
+    font-size: 5rem !important;
   }
 }
 /*# sourceMappingURL=style.css.map */

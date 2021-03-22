@@ -36,7 +36,7 @@ app.use(express.json());
 app.set('trust proxy', 1);
 
 /* routes */
-app.use(express.static('public'));
+app.use(express.static('/public'));
 
 /* generate api key */
 app.use('/key', allowedIps, apiKeyController.getApiKey)
@@ -49,7 +49,7 @@ app.use('/v1', middlewares.checkApiKey, v1);
 app.use(middlewares.notFound);
 app.use(middlewares.errorHandler);
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 5050;
 app.listen(port, () => {
   console.log(`Listening to port ${port}`);
 });

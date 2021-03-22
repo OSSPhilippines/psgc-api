@@ -36,7 +36,7 @@ app.use(express.json());
 app.set('trust proxy', 1);
 
 /* routes */
-app.use(express.static('/public'));
+app.use(express.static(__dirname + '/public'));
 
 /* generate api key */
 app.use('/key', allowedIps, apiKeyController.getApiKey)

@@ -23,13 +23,14 @@ If you're facing a problem in using PSGC API please let me know by creating an i
 
 [![Vercel](https://wrngnz.ga/badge-vercel)](https://vercel.com) [![GitBook](https://wrngnz.ga/badge-gitbook)](https://gitbook.io)
 
-> Love what we do? **[Send us some coffees](https://buymeacoff.ee/wareneutron)**!
->
+<!-- markdownlint-disable MD033 -->
+> Love what we do? **[Send us some coffees](https://buymeacoff.ee/wareneutron)**!<br/>
 > Your coffee donation and support will help us to continue working on open-source projects like this.
+<!-- markdownlint-disable MD033 -->
 
 ## Community
 
-Wanna see other projects I made? Join today!
+Wanna become one of us? Join today and contribute!
 
 [![Community](https://discordapp.com/api/guilds/694612151444439081/widget.png?style=banner3)](https://wareneutron.com/discord)
 

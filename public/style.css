@@ -5,58 +5,41 @@ body {
   padding: 0;
   overflow: hidden;
   height: 100%;
-  display: -ms-grid;
   display: grid;
   place-items: center;
 }
-
 body main {
-  display: -ms-grid;
   display: grid;
   place-items: center;
   height: 100vh;
   text-align: center;
 }
-
 body main .logo {
   font-size: 8em;
   pointer-events: none;
 }
-
 body main .logo #psgc {
   color: #29619a;
 }
-
 body main .logo #rest {
   color: #a42222;
 }
-
 body main .content {
   text-align: center;
   font-size: 1.2rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  flex-direction: column;
+  justify-content: space-around;
   line-height: 0px;
 }
-
 body main .content h4 {
   font-weight: 500 !important;
 }
-
 body main .content a {
   color: #29619a;
   text-decoration: none;
-  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-
 body main .content a:hover {
   color: #a42222;
 }
@@ -66,4 +49,5 @@ body main .content a:hover {
     font-size: 5rem !important;
   }
 }
+
 /*# sourceMappingURL=style.css.map */

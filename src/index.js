@@ -5,6 +5,8 @@ const cors = require('cors');
 const limiter = require('./utils/rateLimit'); /* rate limit */
 const middlewares = require('./middlewares');
 const allowedIps = require('./utils/allowedIps');
+const path = require('path');
+const serveStatic = require('serve-static');
 
 /* api */
 const api = require('./api/_index');
@@ -36,7 +38,7 @@ app.use(express.json());
 app.set('trust proxy', 1);
 
 /* routes */
-app.use(express.static(__dirname + '/public'));
+app.use(serveStatic(path.join(__dirname, '../public')));
 
 /* generate api key */
 app.use('/key', allowedIps, apiKeyController.getApiKey)

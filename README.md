@@ -1,13 +1,15 @@
 # Philippine Standard Geographic Code (PSGC) API
 
-[![creator](https://img.shields.io/badge/creator-Justin%20Balaguer-blue.svg?longCache=true&style=flat-square)](https://github.com/justinbalaguer) [![maintainer](https://img.shields.io/badge/maintainer-Wareneutron%20Developers-blue.svg?longCache=true&style=flat-square)](https://wareneutron.com) [![Data](https://img.shields.io/badge/Data-September%202020-green.svg?longCache=true&style=flat-square)](https://psa.gov.ph) [![Release](https://img.shields.io/github/release/wareneutron/psgc-api.svg?style=flat-square)](https://github.com/wareneutron/psgc-api/releases) [![Star](https://img.shields.io/github/stars/wareneutron/psgc-api.svg?style=flat-square)](https://github.com/wareneutron/psgc-api/stargazers) [![License](https://img.shields.io/github/license/wareneutron/psgc-api.svg?style=flat-square)](https://github.com/wareneutron/psgc-api/blob/main/LICENSE)
+[![by](https://img.shields.io/badge/by-Justin%20Balaguer-blue.svg?longCache=true&style=flat-square)](https://github.com/justinbalaguer) [![maintained by](https://img.shields.io/badge/maintained%20by-Wareneutron%20Developers-blue.svg?longCache=true&style=flat-square)](https://wareneutron.com) [![Data](https://img.shields.io/badge/Data-September%202020-green.svg?longCache=true&style=flat-square)](https://psa.gov.ph) [![Release](https://img.shields.io/github/release/wareneutron/psgc-api.svg?style=flat-square)](https://github.com/wareneutron/psgc-api/releases) [![Star](https://img.shields.io/github/stars/wareneutron/psgc-api.svg?style=flat-square)](https://github.com/wareneutron/psgc-api/stargazers) [![License](https://img.shields.io/github/license/wareneutron/psgc-api.svg?style=flat-square)](https://github.com/wareneutron/psgc-api/blob/main/LICENSE)
 
 API used for listing all the region, province, city, municipality, and barangay. All data came from [Philippine Statistics Authority](https://psa.gov.ph). This API includes the total population for each regions etc. and other information.
 
 ## Documentation
 
-The complete documentation can be found here.
+<!-- <!-- markdownlint-disable MD033 -->
+The complete documentation can be found here:<br/>
 [![API Docs](https://img.shields.io/badge/API%20Docs-docs.wareneutron.com/psgc--api-blue.svg?longCache=true&style=for-the-badge)](https://docs.wareneutron.com/psgc-api)
+<!-- <!-- markdownlint-enable MD033 -->
 
 ## Contributing
 
@@ -43,4 +45,4 @@ PSGC API is Developed and Maintained by **[Justin Balaguer](https://github.com/j
 
 ---
 
-💻 Made with 💖 by Justin Balaguer | [Wareneutron Developers](https://wareneutron.com)
+💻 Made with 💖 and ☕ by [Wareneutron Developers](https://wareneutron.com)

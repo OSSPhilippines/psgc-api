@@ -2,7 +2,6 @@ const RegionRequest = require('../models/regionRequest');
 const ProvinceRequest = require('../models/provinceRequest');
 const handleAsync = require('../utils/handleAsync');
 
-
 /**
  * !PATH: /region/
  */
@@ -10,7 +9,6 @@ const getAllRegions = handleAsync(async (req, res, next) => {
     const data = await RegionRequest.find();
     res.json(data);
 })
-
 
 /**
  * !PATH: /region/:code
@@ -31,7 +29,6 @@ const getARegion = handleAsync(async (req, res, next) => {
         }
     }
 })
-
 
 /**
  * !PATH: /region/:code/province

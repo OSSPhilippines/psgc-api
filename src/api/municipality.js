@@ -11,7 +11,6 @@ const getAllMunicipalities = handleAsync(async (req, res, next) => {
     res.json(data);
 })
 
-
 /**
  * !PATH: /municipality/:code
  */
@@ -32,7 +31,6 @@ const getAMunicipality = handleAsync(async (req, res, next) => {
     }
 
 })
-
 
 /**
  * !PATH: /municipality/:code/barangay

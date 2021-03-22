@@ -3,7 +3,6 @@ const CityRequest = require('../models/cityRequest');
 const MunicipalityRequest = require('../models/municipalityRequest');
 const handleAsync = require('../utils/handleAsync');
 
-
 /**
  * !PATH: /province
  */
@@ -11,7 +10,6 @@ const getAllProvinces = handleAsync(async (req, res, next) => {
     const data = await ProvinceRequest.find();
     res.json(data)
 })
-
 
 /**
  * !PATH: /province/:code
@@ -32,7 +30,6 @@ const getAProvince = async (req, res, next) => {
         }
     }
 }
-
 
 /**
  * !PATH: /province/:code/city
@@ -66,7 +63,6 @@ const getAllCitiesOfAProvince = handleAsync(async (req, res, next) => {
 
     res.json(results)
 })
-
 
 /**
  * !PATH: /province/:code/municipality

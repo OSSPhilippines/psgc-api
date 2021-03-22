@@ -1,8 +1,6 @@
 const BarangayRequest = require('../models/barangayRequest');
 const handleAsync = require('../utils/handleAsync');
 
-
-
 /**
  * !PATH: /barangay
  */
@@ -10,8 +8,6 @@ const getAllBarangays = handleAsync(async (req, res, next) => {
     const data = await BarangayRequest.find();
     res.json(data);
 })
-
-
 
 /**
  * !PATH: /barangay/:code
@@ -33,7 +29,6 @@ const getABarangay = handleAsync(async (req, res, next) => {
     }
 
 })
-
 
 module.exports = {
     getAllBarangays,

@@ -2,7 +2,6 @@ const CityRequest = require('../models/cityRequest');
 const BarangayRequest = require('../models/barangayRequest');
 const handleAsync = require('../utils/handleAsync');
 
-
 /**
  * !PATH: /city
  */
@@ -10,7 +9,6 @@ const getAllCities = handleAsync(async (req, res, next) => {
     const data = await CityRequest.find();
     res.json(data);
 })
-
 
 /**
  * !PATH: /city/:code
@@ -31,7 +29,6 @@ const getACity = handleAsync(async (req, res, next) => {
         }
     }
 })
-
 
 /**
  * !PATH: /city/:code/barangay
@@ -67,7 +64,6 @@ const getAllBarangaysOfACity = handleAsync(async (req, res, next) => {
     res.json(results)
 
 })
-
 
 module.exports = {
     getAllCities,

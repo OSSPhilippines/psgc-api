@@ -9,27 +9,7 @@ const handleAsync = require('../utils/handleAsync');
  */
 const getAllProvinces = handleAsync(async (req, res, next) => {
     const data = await ProvinceRequest.find();
-    const len = data[0].total;
-    const json_data = [];
-    const arr = [];
-    for(let i = 0; i < len; i++) {
-        const code = data[0].province[i].code;
-        const name = data[0].province[i].name;
-        const geographic_level = data[0].province[i].geographic_level;
-        const population = data[0].province[i].population;
-        arr.push({
-            code: code,
-            name: name,
-            geographic_level: geographic_level,
-            population: population
-        });
-    }
-    json_data.push({
-        _id: data[0]._id,
-        total: len,
-        province: arr
-    });
-    res.json(json_data);
+    res.json(data)
 })
 
 
@@ -42,26 +22,17 @@ const getAProvince = async (req, res, next) => {
     if (!data) throw new Error('No Results Found');
 
     const totalNumOfProvinces = parseInt(data.total);
-    let json_data = {};
+
     for (i = 0; i < totalNumOfProvinces; i++) {
         let db_code = data.province[i]['code'];
         let db_obj = data.province[i];
         if (code == db_code) {
-            const code = db_obj.code;
-            const name = db_obj.name;
-            const geographic_level = db_obj.geographic_level;
-            const population = db_obj.population;
-            json_data = {
-                code: code,
-                name: name,
-                geographic_level: geographic_level,
-                population: population
-            };
-            res.json(json_data)
+            res.json(db_obj)
             break;
         }
     }
 }
+
 
 /**
  * !PATH: /province/:code/city
@@ -87,20 +58,10 @@ const getAllCitiesOfAProvince = handleAsync(async (req, res, next) => {
             ? new_split_code = parseInt(db_code[0] + db_code[1] + db_code[2])
             : new_split_code = parseInt(db_code[0] + db_code[1] + db_code[2] + db_code[3])
 
-        if(split_code === new_split_code) {
-            const code = data['city'][i].code;
-            const name = data['city'][i].name;
-            const geographic_level = data['city'][i].geographic_level;
-            const population = data['city'][i].population;
-            results.push({
-                code: code,
-                name: name,
-                geographic_level: geographic_level,
-                population: population
-            })
-        } else {
-            null;
-        }
+        split_code === new_split_code
+            ? results.push(data.city[i])
+            : null
+
     }
 
     res.json(results)
@@ -131,20 +92,9 @@ const getAllMunicipalitiesOfAProvince = handleAsync(async (req, res, next) => {
             ? new_split_code = parseInt(db_code[0] + db_code[1] + db_code[2])
             : new_split_code = parseInt(db_code[0] + db_code[1] + db_code[2] + db_code[3])
 
-        if(split_code === new_split_code) {
-            const code = data['municipality'][i].code;
-            const name = data['municipality'][i].name;
-            const geographic_level = data['municipality'][i].geographic_level;
-            const population = data['municipality'][i].population;
-            results.push({
-                code: code,
-                name: name,
-                geographic_level: geographic_level,
-                population: population
-            })
-        } else {
-            null;
-        }
+        split_code === new_split_code
+            ? results.push(data.municipality[i])
+            : null
 
     }
 

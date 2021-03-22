@@ -1,10 +1,10 @@
 const { Router } = require('express');
 const router = Router({ mergeParams: true });
-const BarangayControllers = require('../backers/barangay');
-const CityControllers = require('../backers/city');
-const MunicipalityControllers = require('../backers/municipality');
-const ProvinceController = require('../backers/province');
-const RegionController = require('../backers/region');
+const BarangayControllers = require('../v1/barangay');
+const CityControllers = require('../v1/city');
+const MunicipalityControllers = require('../v1/municipality');
+const ProvinceController = require('../v1/province');
+const RegionController = require('../v1/region');
 
 // BARANGAY CONTROLLERS
 router.get('/barangay', BarangayControllers.getAllBarangays)

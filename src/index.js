@@ -8,7 +8,7 @@ const allowedIps = require('./utils/allowedIps');
 
 /* api */
 const api = require('./api/_index');
-const backers = require('./backers/_index');
+const v1 = require('./v1/_index');
 const apiKeyController = require('./api/keys');
 
 require('dotenv').config();
@@ -43,7 +43,7 @@ app.use('/key', allowedIps, apiKeyController.getApiKey)
 
 /* api with apikey ckck */
 app.use('/api', limiter, api);
-app.use('/backers', middlewares.checkApiKey, backers);
+app.use('/v1', middlewares.checkApiKey, v1);
 
 /* errorHandler middlerware */
 app.use(middlewares.notFound);

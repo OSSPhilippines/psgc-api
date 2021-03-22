@@ -1,0 +1,55 @@
+$blue: #29619a;
+$red: #a42222;
+body {
+  background-color: #ddd;
+  font-family: "Montserrat", sans-serif !important;
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  main {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    text-align: center;
+    .logo {
+      font-size: 8em;
+      pointer-events: none;
+      #psgc {
+        color: $blue;
+      }
+      #rest {
+        color: $red;
+      }
+    }
+    .content {
+      text-align: center;
+      font-size: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      line-height: 0px;
+      h4 {
+        font-weight: 500 !important;
+      }
+      a {
+        color: $blue;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        &:hover {
+          color: $red;
+        }
+      }
+    }
+  }
+}
+
+// Mobile View
+
+@media screen and (max-width: 900px) {
+  .logo {
+    font-size: 5rem !important;
+  }
+}

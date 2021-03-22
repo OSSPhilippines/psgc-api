@@ -5,7 +5,9 @@
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
-    "dev": "nodemon src/index.js"
+    "dev": "nodemon src/index.js",
+    "sass": "sass src/styles/style.scss:public/style.css",
+    "sass-watch": "sass --watch src/styles/style.scss:public/style.css"
   },
   "keywords": [],
   "author": "Justin Balaguer",
@@ -23,6 +25,7 @@
     "serve-static": "^1.14.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.6"
+    "nodemon": "^2.0.6",
+    "sass": "^1.32.8"
   }
 }

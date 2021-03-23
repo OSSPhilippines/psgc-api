@@ -1,4 +1,3 @@
-import { NextFunction, Request, Response } from "express";
 import MunicipalityRequest from "../models/municipalityRequest";
 import BarangayRequest from "../models/barangayRequest";
 import handleAsync from "../utils/handleAsync";
@@ -6,43 +5,39 @@ import handleAsync from "../utils/handleAsync";
 /**
  * !PATH: /municipality
  */
-export const getAllMunicipalities = handleAsync(
-    async (_: Request, res: Response, _next: NextFunction) => {
-        const data = await MunicipalityRequest.find();
-        res.json(data);
-    }
-);
+export const getAllMunicipalities = handleAsync(async (_, res, _next) => {
+    const data = await MunicipalityRequest.find();
+    res.json(data);
+});
 
 /**
  * !PATH: /municipality/:code
  */
-export const getAMunicipality = handleAsync(
-    async (req: Request, res: Response, _next: NextFunction) => {
-        const { code } = req.params;
-        const [data] = await MunicipalityRequest.find({
-            "municipality.code": code,
-        });
-        if (!data) throw new Error("No Results Found");
+export const getAMunicipality = handleAsync(async (req, res, _next) => {
+    const { code } = req.params;
+    const [data] = await MunicipalityRequest.find({
+        "municipality.code": code,
+    });
+    if (!data) throw new Error("No Results Found");
 
-        const totalNumOfMunicipalities = parseInt(data.total);
+    const totalNumOfMunicipalities = parseInt(data.total);
 
-        for (let i = 0; i < totalNumOfMunicipalities; i++) {
-            let db_code = data.municipality[i]["code"];
-            let db_obj = data.municipality[i];
-            if (code == db_code) {
-                res.json(db_obj);
-                break;
-            }
+    for (let i = 0; i < totalNumOfMunicipalities; i++) {
+        let db_code = data.municipality[i]["code"];
+        let db_obj = data.municipality[i];
+        if (code == db_code) {
+            res.json(db_obj);
+            break;
         }
     }
-);
+});
 
 /**
  * !PATH: /municipality/:code/barangay
  * barangay (for municipality)
  */
 export const getAllBarangaysOfAMunicipality = handleAsync(
-    async (req: Request, res: Response, _next: NextFunction) => {
+    async (req, res, _next) => {
         const { code } = req.params;
         const [data] = await BarangayRequest.find();
         if (!data) throw new Error("No Results Found");

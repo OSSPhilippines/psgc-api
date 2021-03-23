@@ -57,6 +57,6 @@ body {
 // Mobile View
 @media screen and (max-width: 900px) {
     .logo {
-        font-size: 5rem;
+        font-size: 5rem !important;
     }
 }

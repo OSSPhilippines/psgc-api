@@ -1,42 +1,49 @@
 export {};
 
-const { Router } = require("express");
+import { Router } from "express";
+import { getABarangay, getAllBarangays } from "../v1/barangay";
+import { getACity, getAllBarangaysOfACity, getAllCities } from "../v1/city";
+import {
+    getAMunicipality,
+    getAllBarangaysOfAMunicipality,
+    getAllMunicipalities,
+} from "../v1/municipality";
+import {
+    getAProvince,
+    getAllCitiesOfAProvince,
+    getAllMunicipalitiesOfAProvince,
+    getAllProvinces,
+} from "../v1/province";
+import {
+    getARegion,
+    getAllProvincesOfARegion,
+    getAllRegions,
+} from "../v1/region";
 const router = Router({ mergeParams: true });
-const BarangayControllers = require("../v1/barangay");
-const CityControllers = require("../v1/city");
-const MunicipalityControllers = require("../v1/municipality");
-const ProvinceController = require("../v1/province");
-const RegionController = require("../v1/region");
 
 // BARANGAY CONTROLLERS
-router.get("/barangay", BarangayControllers.getAllBarangays);
-router.get("/barangay/:code", BarangayControllers.getABarangay);
+router.get("/barangay", getAllBarangays);
+router.get("/barangay/:code", getABarangay);
 
 // CITY CONTROLLERS
-router.get("/city", CityControllers.getAllCities);
-router.get("/city/:code", CityControllers.getACity);
-router.get("/city/:code/barangay", CityControllers.getAllBarangaysOfACity);
+router.get("/city", getAllCities);
+router.get("/city/:code", getACity);
+router.get("/city/:code/barangay", getAllBarangaysOfACity);
 
 // MUNICIPALITY CONTROLLERS
-router.get("/municipality", MunicipalityControllers.getAllMunicipalities);
-router.get("/municipality/:code", MunicipalityControllers.getAMunicipality);
-router.get(
-    "/municipality/:code/barangay",
-    MunicipalityControllers.getAllBarangaysOfAMunicipality
-);
+router.get("/municipality", getAllMunicipalities);
+router.get("/municipality/:code", getAMunicipality);
+router.get("/municipality/:code/barangay", getAllBarangaysOfAMunicipality);
 
 // PROVINCE CONTROLLERS
-router.get("/province", ProvinceController.getAllProvinces);
-router.get("/province/:code", ProvinceController.getAProvince);
-router.get("/province/:code/city", ProvinceController.getAllCitiesOfAProvince);
-router.get(
-    "/province/:code/municipality",
-    ProvinceController.getAllMunicipalitiesOfAProvince
-);
+router.get("/province", getAllProvinces);
+router.get("/province/:code", getAProvince);
+router.get("/province/:code/city", getAllCitiesOfAProvince);
+router.get("/province/:code/municipality", getAllMunicipalitiesOfAProvince);
 
 // REGION CONTROLLERS
-router.get("/region", RegionController.getAllRegions);
-router.get("/region/:code", RegionController.getARegion);
-router.get("/region/:code/province", RegionController.getAllProvincesOfARegion);
+router.get("/region", getAllRegions);
+router.get("/region/:code", getARegion);
+router.get("/region/:code/province", getAllProvincesOfARegion);
 
 export default router;

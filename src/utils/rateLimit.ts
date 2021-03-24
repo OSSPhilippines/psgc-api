@@ -1,10 +1,10 @@
-const rateLimit = require("express-rate-limit");
+import rateLimit, { RateLimit } from "express-rate-limit";
 
-const apiLimit = rateLimit({
+const apiLimit: RateLimit = rateLimit({
     windowMs: 24 * 60 * 60 * 1000, // 24 hours
     max: 200, // limit of each IP
     message: "Uh oh! You have reached the maximum api call (200 calls per day)",
-    headers: true
+    headers: true,
 });
 
-module.exports = apiLimit;
+export default apiLimit;

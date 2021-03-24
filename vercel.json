@@ -20,6 +20,6 @@
         { "source": "/barangay", "destination": "/api/barangay", "permanent": false },
         { "source": "/docs", "destination": "https://docs.wareneutron.com/psgc-api" }
     ],
-    "regions": "sin",
+    "regions": ["sin"],
     "cleanUrls": true
 }

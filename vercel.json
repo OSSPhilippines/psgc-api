@@ -12,9 +12,14 @@
             "dest": "src/"
         }
     ],
-    "env": {
-        "MONGODB_URL": "@mongodb_url",
-        "NODE_ENV": "production",
-        "API_SECRET": ""
-    }
+    "redirects": [
+        { "source": "/region", "destination": "/api/region", "permanent": false },
+        { "source": "/province", "destination": "/api/province", "permanent": false },
+        { "source": "/city", "destination": "/api/city", "permanent": false },
+        { "source": "/municipality", "destination": "/api/municipality", "permanent": false },
+        { "source": "/barangay", "destination": "/api/barangay", "permanent": false },
+        { "source": "/docs", "destination": "https://docs.wareneutron.com/psgc-api" }
+    ],
+    "regions": "sin",
+    "cleanUrls": true
 }

@@ -6,8 +6,17 @@ import handleAsync from "../utils/handleAsync";
  * !PATH: /region/
  */
 export const getAllRegions = handleAsync(async (_, res, _next) => {
-    const data = await RegionRequest.find();
-    res.json(data);
+    const { page = 1, limit = 10 } = _.query;
+    const data = await RegionRequest.find()
+        .limit(<number>limit * 1)
+        .skip((<number>page - 1) * <number>limit)
+        .exec();
+    const count = await RegionRequest.countDocuments();
+    res.json({
+        data,
+        totalPages: Math.ceil(count / <number>limit),
+        currentPage: page
+    });
 });
 
 /**

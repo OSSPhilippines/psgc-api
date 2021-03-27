@@ -4,9 +4,10 @@ import handleAsync from "../utils/handleAsync";
 /**
  * !PATH: /barangay
  */
-export const getAllBarangays = handleAsync(async (_, res, _next) => {
-    const { page = 1, limit = 10 } = _.query;
-    const data = await BarangayRequest.find().limit(<number>limit * 1)
+export const getAllBarangays = handleAsync(async (req, res, _next) => {
+    const { page = 1, limit = 10 } = req.query;
+    const data = await BarangayRequest.find()
+        .limit(<number>limit * 1)
         .skip((<number>page - 1) * <number>limit)
         .exec();
     const count = await BarangayRequest.countDocuments();
@@ -25,11 +26,11 @@ export const getABarangay = handleAsync(async (req, res, _next) => {
     const [data] = await BarangayRequest.find({ "barangay.code": code });
     if (!data) throw new Error("No Results Found");
 
-    const totalNumOfBarangays = parseInt(data.total);
+    const totalNumOfBarangays = Object.keys(data.province[0]).length;
 
     for (let i = 0; i < totalNumOfBarangays; i++) {
-        let db_code = data.barangay[i]["code"];
-        let db_obj = data.barangay[i];
+        let db_code = data[i].barangay[0].code;
+        let db_obj = data[i].barangay[0];
         if (code == db_code) {
             res.json(db_obj);
             break;

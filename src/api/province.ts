@@ -6,9 +6,18 @@ import handleAsync from "../utils/handleAsync";
 /**
  * !PATH: /province
  */
-export const getAllProvinces = handleAsync(async (_, res, _next) => {
-    const data = await ProvinceRequest.find();
-    res.json(data);
+export const getAllProvinces = handleAsync(async (req, res, _next) => {
+    const { page = 1, limit = 10 } = req.query;
+    const data = await ProvinceRequest.find()
+        .limit(<number>limit * 1)
+        .skip((<number>page - 1) * <number>limit)
+        .exec();
+    const count = await ProvinceRequest.countDocuments();
+    res.json({
+        data,
+        totalPages: Math.ceil(count / <number>limit),
+        currentPage: page
+    });
 });
 
 /**
@@ -19,11 +28,11 @@ export const getAProvince = handleAsync(async (req, res, _next) => {
     const [data] = await ProvinceRequest.find({ "province.code": code });
     if (!data) throw new Error("No Results Found");
 
-    const totalNumOfProvinces = parseInt(data.total);
+    const totalNumOfProvinces = Object.keys(data.province[0]).length;
 
     for (let i = 0; i < totalNumOfProvinces; i++) {
-        let db_code = data.province[i]["code"];
-        let db_obj = data.province[i];
+        let db_code = data.province[0].code;
+        let db_obj = data.province[0];
         if (code == db_code) {
             res.json(db_obj);
             break;
@@ -36,11 +45,11 @@ export const getAProvince = handleAsync(async (req, res, _next) => {
  */
 export const getAllCitiesOfAProvince = handleAsync(async (req, res, _next) => {
     const { code } = req.params;
-    const [data] = await CityRequest.find();
+    const data = await CityRequest.find();
     if (!data) throw new Error("No Results Found");
 
     const codeArray = code.split("");
-    const totalNumOfCities = parseInt(data.total);
+    const totalNumOfCities = Object.keys(data).length;
     const results = [];
 
     let new_split_code = 0;
@@ -52,7 +61,7 @@ export const getAllCitiesOfAProvince = handleAsync(async (req, res, _next) => {
               );
 
     for (let i = 0; i < totalNumOfCities; i++) {
-        const db_code = data.city[i]["code"];
+        const db_code = data[i].city[0].code;
 
         db_code.split("").length < 9
             ? (new_split_code = parseInt(db_code[0] + db_code[1] + db_code[2]))
@@ -60,7 +69,7 @@ export const getAllCitiesOfAProvince = handleAsync(async (req, res, _next) => {
                   db_code[0] + db_code[1] + db_code[2] + db_code[3]
               ));
 
-        split_code === new_split_code ? results.push(data.city[i]) : null;
+        split_code === new_split_code ? results.push(data[i].city) : null;
     }
 
     res.json(results);
@@ -72,11 +81,11 @@ export const getAllCitiesOfAProvince = handleAsync(async (req, res, _next) => {
 export const getAllMunicipalitiesOfAProvince = handleAsync(
     async (req, res, _next) => {
         const { code } = req.params;
-        const [data] = await MunicipalityRequest.find();
+        const data = await MunicipalityRequest.find();
         if (!data) throw new Error("No Results Found");
 
         const codeArray = code.split("");
-        const totalNumOfMunicipalities = parseInt(data.total);
+        const totalNumOfMunicipalities = Object.keys(data).length;
         const results = [];
 
         let new_split_code = 0;
@@ -88,7 +97,7 @@ export const getAllMunicipalitiesOfAProvince = handleAsync(
                   );
 
         for (let i = 0; i < totalNumOfMunicipalities; i++) {
-            const db_code = data.municipality[i]["code"];
+            const db_code = data[i].municipality[0].code;
 
             db_code.split("").length < 9
                 ? (new_split_code = parseInt(
@@ -99,7 +108,7 @@ export const getAllMunicipalitiesOfAProvince = handleAsync(
                   ));
 
             split_code === new_split_code
-                ? results.push(data.municipality[i])
+                ? results.push(data[i].municipality)
                 : null;
         }
 

@@ -5,9 +5,18 @@ import handleAsync from "../utils/handleAsync";
 /**
  * !PATH: /city
  */
-export const getAllCities = handleAsync(async (_, res, _next) => {
-    const data = await CityRequest.find();
-    res.json(data);
+export const getAllCities = handleAsync(async (req, res, _next) => {
+    const { page = 1, limit = 10 } = req.query;
+    const data = await CityRequest.find()
+        .limit(<number>limit * 1)
+        .skip((<number>page - 1) * <number>limit)
+        .exec();
+    const count = await CityRequest.countDocuments();
+    res.json({
+        data,
+        totalPages: Math.ceil(count / <number>limit),
+        currentPage: page
+    });
 });
 
 /**
@@ -18,11 +27,11 @@ export const getACity = handleAsync(async (req, res, _next) => {
     const [data] = await CityRequest.find({ "city.code": code });
     if (!data) throw new Error("No Results Found");
 
-    const totalNumOfCities = parseInt(data.total);
+    const totalNumOfCities = Object.keys(data.municipality[0]).length;
 
     for (let i = 0; i < totalNumOfCities; i++) {
-        let db_code = data.city[i]["code"];
-        let db_obj = data.city[i];
+        let db_code = data[i].city[0].code;
+        let db_obj = data[i].city[0];
         if (code == db_code) {
             res.json(db_obj);
             break;
@@ -36,10 +45,10 @@ export const getACity = handleAsync(async (req, res, _next) => {
  */
 export const getAllBarangaysOfACity = handleAsync(async (req, res, _next) => {
     const { code } = req.params;
-    const [data] = await BarangayRequest.find();
+    const data = await BarangayRequest.find();
     if (!data) throw new Error("No Results Found");
 
-    const totalNumOfBarangays = parseInt(data.total);
+    const totalNumOfBarangays = Object.keys(data).length;
     const codeArray = code.split("");
     const results = [];
 
@@ -65,7 +74,7 @@ export const getAllBarangaysOfACity = handleAsync(async (req, res, _next) => {
               );
 
     for (let i = 0; i < totalNumOfBarangays; i++) {
-        const db_code = data.barangay[i]["code"];
+        const db_code = data[i].barangay[0].code;
 
         db_code.split("").length < 9
             ? (new_split_code = parseInt(
@@ -86,7 +95,7 @@ export const getAllBarangaysOfACity = handleAsync(async (req, res, _next) => {
                       db_code[6]
               ));
 
-        split_code === new_split_code ? results.push(data.barangay[i]) : null;
+        split_code === new_split_code ? results.push(data[i].barangay) : null;
     }
 
     res.json(results);

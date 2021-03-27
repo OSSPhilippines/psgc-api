@@ -29,7 +29,18 @@ try {
 const app = express();
 
 app.use(morgan('common'));
-app.use(helmet());
+app.use(
+  helmet({
+      contentSecurityPolicy: {
+          directives: {
+              defaultSrc: ["'self'"],
+              scriptSrc: ["'self'", "https://cdn.jsdelivr.net"],
+              styleSrc: ["'self'", "https://cdn.jsdelivr.net", "https://fonts.googleapis.com"],
+              fontSrc: ["'self'", "fonts.gstatic.com", "https://cdn.jsdelivr.net"]
+          }
+      },
+  })
+);
 app.use(cors());
 app.use(express.json());
 

@@ -19,7 +19,7 @@ Contributions are welcome, create a pull request to this repo and we'll review y
 
 If you're facing a problem in using PSGC API please let us know by [creating an issue here](https://github.com/wareneutron/genpass-cli/issues/new). We are happy to help you! Don't forget to provide us some screenshot or errors of it, thank you!
 
-## Supporters
+## Sponsors and Supporters
 
 [![Vercel](https://wrngnz.ga/badge-vercel)](https://vercel.com) [![CircleCI](https://wrngnz.ga/badge-circleci)](https://circleci.com) [![GitBook](https://wrngnz.ga/badge-gitbook)](https://gitbook.io)
 

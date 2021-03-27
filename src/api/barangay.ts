@@ -26,11 +26,11 @@ export const getABarangay = handleAsync(async (req, res, _next) => {
     const [data] = await BarangayRequest.find({ "barangay.code": code });
     if (!data) throw new Error("No Results Found");
 
-    const totalNumOfBarangays = Object.keys(data.province[0]).length;
+    const totalNumOfBarangays = Object.keys(data.barangay[0]).length;
 
     for (let i = 0; i < totalNumOfBarangays; i++) {
-        let db_code = data[i].barangay[0].code;
-        let db_obj = data[i].barangay[0];
+        let db_code = data.barangay[0].code;
+        let db_obj = data.barangay[0];
         if (code == db_code) {
             res.json(db_obj);
             break;

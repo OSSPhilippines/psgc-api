@@ -1,39 +1,15 @@
-body {
-  background-color: #ddd;
-  font-family: "Montserrat", sans-serif !important;
-  margin: 0 auto;
+* {
   padding: 0;
-  overflow: hidden;
-  height: 100%;
-  display: -ms-grid;
-  display: grid;
-  place-items: center;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Monserrat", sans-serif;
 }
 
-body main {
-  display: -ms-grid;
-  display: grid;
-  place-items: center;
+body {
+  width: 100%;
   height: 100vh;
-  text-align: center;
-}
-
-body main .logo {
-  font-size: 8em;
-  pointer-events: none;
-}
-
-body main .logo #psgc {
-  color: #29619a;
-}
-
-body main .logo #rest {
-  color: #a42222;
-}
-
-body main .content {
-  text-align: center;
-  font-size: 1.2rem;
+  background-color: #ddd;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -41,29 +17,83 @@ body main .content {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  line-height: 0px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
 }
 
-body main .content h4 {
-  font-weight: 500 !important;
+main {
+  -webkit-transform: translateY(-50px);
+          transform: translateY(-50px);
+  height: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
-body main .content a {
-  color: #29619a;
-  text-decoration: none;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+main .logo {
+  font-size: 8rem;
+  margin-bottom: 40px;
+  pointer-events: none;
 }
 
-body main .content a:hover {
+main .logo #psgc {
   color: #a42222;
 }
 
-@media screen and (max-width: 900px) {
+main .logo #rest {
+  color: #29619a;
+}
+
+main .links {
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+main .links a {
+  text-decoration: none;
+  color: #29619a;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  font-size: 1.2rem;
+}
+
+main .links a:hover {
+  color: #a42222;
+}
+
+@media screen and (max-width: 800px) {
   .logo {
     font-size: 5rem !important;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .logo {
+    font-size: 3.5rem !important;
   }
 }
 /*# sourceMappingURL=style.css.map */

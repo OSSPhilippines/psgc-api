@@ -86,14 +86,16 @@ main .links a:hover {
 }
 
 @media screen and (max-width: 800px) {
-  .logo {
-    font-size: 5rem !important;
+  #psgc,
+  #rest {
+    font-size: 5rem;
   }
 }
 
 @media screen and (max-width: 400px) {
-  .logo {
-    font-size: 3.5rem !important;
+  #psgc,
+  #rest {
+    font-size: 3.5rem;
   }
 }
 /*# sourceMappingURL=style.css.map */

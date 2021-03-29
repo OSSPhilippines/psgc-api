@@ -1,3 +1,11 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
 body {
   background-color: #ddd;
   font-family: "Montserrat", sans-serif;
@@ -15,8 +23,9 @@ body main {
   text-align: center;
 }
 body main .logo {
-  font-size: 8em;
+  font-size: 12.8em;
   cursor: default;
+  margin-top: 0;
 }
 body main .logo #psgc {
   color: #016EEA;
@@ -26,14 +35,14 @@ body main .logo #api {
 }
 body main .content {
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1.92rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  line-height: 0px;
 }
 body main .content h2 {
   font-weight: normal;
+  margin: 7px 0;
 }
 body main .content h2 > a {
   text-decoration: none;
@@ -44,9 +53,9 @@ body main .content h2 > a:hover {
   transition: all 0.3s ease-out;
 }
 
-@media screen and (max-width: 900px) {
-  .logo {
-    font-size: 5rem;
+@media screen and (max-width: 600px) {
+  html {
+    font-size: 42.5%;
   }
 }
 

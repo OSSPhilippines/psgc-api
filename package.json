@@ -1,31 +1,42 @@
 {
-  "name": "psgc_backend",
-  "version": "1.4.0",
-  "description": "",
-  "main": "src/index.js",
-  "scripts": {
-    "start": "node src/index.js",
-    "dev": "nodemon src/index.js",
-    "sass": "sass src/styles/style.scss:public/style.css",
-    "sass-watch": "sass --watch src/styles/style.scss:public/style.css"
-  },
-  "keywords": [],
-  "author": "Justin Balaguer",
-  "license": "GPL-3.0",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "express-ipfilter": "^1.1.2",
-    "express-rate-limit": "^5.2.3",
-    "helmet": "^4.2.0",
-    "mongoose": "^5.12.1",
-    "morgan": "^1.10.0",
-    "nanoid": "^3.1.18",
-    "serve-static": "^1.14.1"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.6",
-    "sass": "^1.32.8"
-  }
+    "name": "psgc_backend",
+    "version": "1.4.0",
+    "description": "",
+    "main": "src/index.js",
+    "scripts": {
+        "start": "node dist/index.js",
+        "startTS": "tsnode src/index.ts",
+        "dev": "nodemon dist/index.js",
+        "devTS": "nodemon --exec ts-node src/index.ts",
+        "watch": "tsc -w",
+        "build": "tsc",
+        "sass": "sass src/styles/style.scss:public/style.css",
+        "sass-watch": "sass --watch src/styles/style.scss:public/style.css"
+    },
+    "keywords": [],
+    "author": "Justin Balaguer",
+    "license": "GPL-3.0",
+    "dependencies": {
+        "cors": "^2.8.5",
+        "dotenv": "^8.2.0",
+        "express": "^4.17.1",
+        "express-ipfilter": "^1.1.2",
+        "express-rate-limit": "^5.2.3",
+        "helmet": "^4.2.0",
+        "mongoose": "^5.12.1",
+        "morgan": "^1.10.0",
+        "nanoid": "^3.1.18",
+        "serve-static": "^1.14.1"
+    },
+    "devDependencies": {
+        "@types/cors": "^2.8.10",
+        "@types/express": "^4.17.11",
+        "@types/express-rate-limit": "^5.1.1",
+        "@types/morgan": "^1.9.2",
+        "@types/node": "^14.14.35",
+        "nodemon": "^2.0.6",
+        "sass": "^1.32.8",
+        "ts-node": "^9.1.1",
+        "typescript": "^4.2.3"
+    }
 }

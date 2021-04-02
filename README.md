@@ -2,6 +2,8 @@
 
 [![created by](https://img.shields.io/badge/created%20by-Justin%20Balaguer-blue.svg?longCache=true&style=flat-square)](https://github.com/justinbalaguer) [![maintained by](https://img.shields.io/badge/maintained%20by-Wareneutron%20Developers-blue.svg?longCache=true&style=flat-square)](https://wareneutron.com) [![Data](https://img.shields.io/badge/Data-September%202020-green.svg?longCache=true&style=flat-square)](https://psa.gov.ph) [![Release](https://img.shields.io/github/release/wareneutron/psgc-api.svg?style=flat-square)](https://github.com/wareneutron/psgc-api/releases) [![Star](https://img.shields.io/github/stars/wareneutron/psgc-api.svg?style=flat-square)](https://github.com/wareneutron/psgc-api/stargazers) [![License](https://img.shields.io/github/license/wareneutron/psgc-api.svg?style=flat-square)](https://github.com/wareneutron/psgc-api/blob/main/LICENSE)
 
+[![Banner](.github/wareneutron_psgc_api_github_banner.jpg)](https://docs.wareneutron.com/psgc-api)
+
 API used for listing all the region, province, city, municipality, and barangay. All data came from [Philippine Statistics Authority](https://psa.gov.ph). This API includes the total population for each regions etc. and other information.
 
 ## Documentation

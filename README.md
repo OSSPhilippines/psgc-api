@@ -6,31 +6,31 @@
 
 API used for listing all the region, province, city, municipality, and barangay. All data came from [Philippine Statistics Authority](https://psa.gov.ph). This API includes the total population for each regions etc. and other information.
 
-## Documentation
+## 📖 Documentation
 
 <!-- <!-- markdownlint-disable MD033 -->
 The complete documentation can be found here:<br/>
 [![API Docs](https://img.shields.io/badge/API%20Docs-docs.wareneutron.com/psgc--api-blue.svg?longCache=true&style=for-the-badge)](https://docs.wareneutron.com/psgc-api)
 <!-- <!-- markdownlint-enable MD033 -->
 
-## Contributing
+## 🎯 Contributing
 
 Contributions are welcome, create a pull request to this repo and we'll review your code. Please consider to submit your pull request to the ```dev``` branch. Thank you!
 
-## Issues
+## 🐛 Issues
 
 If you're facing a problem in using PSGC API please let us know by [creating an issue here](https://github.com/wareneutron/genpass-cli/issues/new). We are happy to help you! Don't forget to provide us some screenshot or errors of it, thank you!
 
-## Sponsors and Supporters
+## 🏆 Sponsors and Supporters
 
-[![Vercel](https://wrngnz.ga/badge-vercel)](https://vercel.com) [![CircleCI](https://wrngnz.ga/badge-circleci)](https://circleci.com) [![GitBook](https://wrngnz.ga/badge-gitbook)](https://gitbook.io)
+[![Vercel](https://wrngnz.ga/badge-vercel)](https://vercel.com) [![CircleCI](https://wrngnz.ga/badge-circleci)](https://circleci.com) [![GitBook](https://wrngnz.ga/badge-gitbook)](https://gitbook.io) [![Digital Ocean](https://wrngnz.ga/badge-digitalocean)](https://digitalocean.com)
 
 <!-- markdownlint-disable MD033 -->
 > Love what we do? **[Send us some coffees](https://buymeacoff.ee/wareneutron)**!<br/>
 > Your coffee donation and support will help us to continue working on open-source projects like this.
 <!-- markdownlint-disable MD033 -->
 
-## Community
+## 🌏 Community
 
 Wanna become one of us? Join today and contribute!
 
@@ -40,11 +40,15 @@ Looking for community of Filipino tech enthusiasts?
 
 [![Community](https://discordapp.com/api/guilds/659684980137656340/widget.png?style=banner2)](https://wrngnzga.com/discord)
 
-## License
+## 📋 Code of Conduct
+
+Read the project's [code of conduct](./code_of_conduct.md).
+
+## 📃 License
 
 PSGC API is licensed under [GNU General Public License v3](https://opensource.org/licenses/GPL-3.0).
 
-## Author
+## 📝 Author
 
 PSGC API is created by **[Justin Balaguer](https://github.com/justinbalaguer)**, developed and maintained by [Wareneutron Developers](https://wareneutron.com) with the help of awesome [contributors](https://github.com/wareneutron/psgc-api/graphs/contributors).
 
